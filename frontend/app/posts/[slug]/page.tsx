@@ -1,6 +1,19 @@
-import { getPost } from "@/lib/api";
+import { getPost, getPosts } from "@/lib/api";
 import { generateSeoMetadata, generateArticleSchema } from "@/lib/seo";
 import PostContent from "./PostContent";
+
+export async function generateStaticParams() {
+    try {
+        const posts = await getPosts();
+        if (!Array.isArray(posts)) return [];
+        return posts.map((post: any) => ({
+            slug: post.slug,
+        }));
+    } catch (e) {
+        console.error("Error generating static params:", e);
+        return [];
+    }
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
