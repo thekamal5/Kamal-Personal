@@ -1,0 +1,140 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  password  String
+  role      String   @default("CONTRIBUTOR")
+  posts     Post[]
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id      String @id @default(cuid())
+  name    String @unique
+  slug    String @unique
+  posts   Post[]
+  slots   Slot[] // Rules for slots can target categories
+}
+
+model Tag {
+  id    String @id @default(cuid())
+  name  String @unique
+  slug  String @unique
+  posts Post[]
+}
+
+model Post {
+  id                 String     @id @default(cuid())
+  type               String     @default("ARTICLE")
+  status             String     @default("DRAFT")
+  headline           String
+  subheadline        String?
+  body               String     // Removed @db.Text for SQLite compatibility
+  slug               String     @unique
+  featuredImage      String?
+  imageCaption       String?
+  focusPoint         String?    // Storing JSON string due to SQLite limitations
+  embeddedMedia      String?
+  videoLink          String? 
+  
+  // Display Flags
+  isHeadline         Boolean    @default(false)
+  isBanner           Boolean    @default(false)
+  isFeatured         Boolean    @default(false)
+
+  // SEO
+  seoTitle           String?
+  seoDescription     String?
+  ogImage            String?
+  canonicalUrl       String?
+
+  authorId           String
+  author             User       @relation(fields: [authorId], references: [id])
+  
+  categoryId         String
+  category           Category   @relation(fields: [categoryId], references: [id])
+  
+  tags               Tag[]
+  
+  publishDate        DateTime?
+  scheduledDate      DateTime?
+  expiresAt          DateTime?
+
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+
+  revisions          Revision[]
+  slotOverrides      Slot[]     @relation("SlotOverrides")
+
+  @@index([status, type])
+  @@index([publishDate])
+}
+
+model Revision {
+  id        String   @id @default(cuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id])
+  content   String   // Removed @db.Text
+  editorId  String
+  comment   String?
+  createdAt DateTime @default(now())
+}
+
+model Page {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  sections  Section[]
+}
+
+model Section {
+  id        String   @id @default(cuid())
+  name      String   
+  pageId    String
+  page      Page     @relation(fields: [pageId], references: [id])
+  slots     Slot[]
+  order     Int      @default(0)
+}
+
+model Slot {
+  id                  String   @id @default(cuid())
+  sectionId           String
+  section             Section  @relation(fields: [sectionId], references: [id])
+  order               Int      @default(0)
+  
+  overridePostId      String?
+  overridePost        Post?    @relation("SlotOverrides", fields: [overridePostId], references: [id])
+  lockPlacement       Boolean  @default(false)
+  
+  rules               String? // JSON string
+  
+  targetCategoryId    String?
+  targetCategory      Category? @relation(fields: [targetCategoryId], references: [id])
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  action    String
+  entity    String
+  entityId  String
+  oldData   String? // JSON string
+  newData   String? // JSON string
+  createdAt DateTime @default(now())
+}
