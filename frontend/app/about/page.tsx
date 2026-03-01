@@ -20,7 +20,7 @@ export default function AboutPage() {
                                 className="aspect-[4/5] bg-slate-100 dark:bg-slate-900 rounded-[40px] overflow-hidden relative shadow-2xl"
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1974"
+                                    src="/kamal-hero.jpg"
                                     alt="Kamal Shrestha"
                                     className="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700"
                                 />
