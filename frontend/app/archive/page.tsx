@@ -15,6 +15,16 @@ export default function ArchivePage() {
         queryFn: () => getPosts({ status: 'PUBLISHED' }),
     });
 
+    const filteredPosts = posts?.filter((p: any) => {
+        if (!search.trim()) return true;
+        const q = search.toLowerCase();
+        return (
+            p.headline?.toLowerCase().includes(q) ||
+            p.subheadline?.toLowerCase().includes(q) ||
+            p.body?.toLowerCase().includes(q)
+        );
+    }) || [];
+
     return (
         <main className="min-h-screen bg-[#fdfdfd] dark:bg-slate-950">
             <Navbar />
@@ -53,11 +63,16 @@ export default function ArchivePage() {
                             <div key={i} className="h-64 bg-slate-50 dark:bg-slate-900 rounded-3xl animate-pulse" />
                         ))}
                     </div>
+                ) : filteredPosts.length === 0 && search.trim() ? (
+                    <div className="max-w-7xl mx-auto px-4 py-24 text-center">
+                        <p className="text-2xl font-black text-slate-300 dark:text-slate-700">No results for &ldquo;{search}&rdquo;</p>
+                        <p className="text-slate-400 mt-4 font-medium">Try a different search term.</p>
+                    </div>
                 ) : (
                     <SectionGrid
                         id="archive-results"
-                        title="Full Catalog"
-                        slots={posts?.map((p: any) => ({ slotId: p.id, content: p, isOverride: false })) || []}
+                        title={search.trim() ? `Results for "${search}"` : "Full Catalog"}
+                        slots={filteredPosts.map((p: any) => ({ slotId: p.id, content: p, isOverride: false }))}
                     />
                 )}
             </section>

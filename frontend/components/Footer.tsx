@@ -29,7 +29,7 @@ export function Footer() {
                             <FooterLink href="/archive">Archive</FooterLink>
                             <FooterLink href="/videos">Videos</FooterLink>
                             <FooterLink href="/opinions">Opinions</FooterLink>
-                            <FooterLink href="/reports">Reports</FooterLink>
+                            <FooterLink href="/about">About</FooterLink>
                         </ul>
                     </div>
 
@@ -37,7 +37,6 @@ export function Footer() {
                         <h4 className="text-xs font-black uppercase tracking-widest mb-6 opacity-40">System</h4>
                         <ul className="space-y-4">
                             <FooterLink href="/about">About Kamal</FooterLink>
-                            <FooterLink href="/contact">Connect</FooterLink>
                             <FooterLink href="/admin/login">Editorial Gate</FooterLink>
                         </ul>
                     </div>
@@ -58,7 +57,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="pt-12 border-t border-slate-100 dark:border-slate-800 flex flex-col md:row justify-between items-center gap-6">
+                <div className="pt-12 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-[10px] font-black uppercase tracking-widest opacity-30">
                         © 2026 Kamal Shrestha Media. All Rights Reserved.
                     </p>

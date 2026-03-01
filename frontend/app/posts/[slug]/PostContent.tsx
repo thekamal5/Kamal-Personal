@@ -1,11 +1,63 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { motion } from "framer-motion";
-import { Calendar, Tag, Clock, ChevronLeft } from "lucide-react";
+import { Calendar, Tag, Clock, ChevronLeft, AlertCircle } from "lucide-react";
 import Link from "next/link";
+import { getPost } from "@/lib/api";
 
-export default function PostContent({ post }: { post: any }) {
+export default function PostContent({ slug }: { slug: string }) {
+    const [post, setPost] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (!slug || slug === '_placeholder') {
+            setLoading(false);
+            return;
+        }
+        getPost(slug).then((data) => {
+            setPost(data);
+            setLoading(false);
+        });
+    }, [slug]);
+
+    if (loading) {
+        return (
+            <main className="min-h-screen bg-white dark:bg-slate-950">
+                <Navbar />
+                <div className="pt-40 pb-24 max-w-4xl mx-auto px-4 space-y-10">
+                    <div className="h-6 w-32 bg-slate-100 dark:bg-slate-800 rounded-full animate-pulse" />
+                    <div className="h-20 w-full bg-slate-100 dark:bg-slate-800 rounded-2xl animate-pulse" />
+                    <div className="h-10 w-2/3 bg-slate-100 dark:bg-slate-800 rounded-xl animate-pulse" />
+                    <div className="aspect-video w-full bg-slate-100 dark:bg-slate-800 rounded-3xl animate-pulse" />
+                    <div className="space-y-4">
+                        {[1, 2, 3, 4, 5].map(i => (
+                            <div key={i} className="h-5 w-full bg-slate-100 dark:bg-slate-800 rounded-xl animate-pulse" />
+                        ))}
+                    </div>
+                </div>
+            </main>
+        );
+    }
+
+    if (!post) {
+        return (
+            <main className="min-h-screen bg-white dark:bg-slate-950 flex items-center justify-center">
+                <Navbar />
+                <div className="text-center space-y-6 pt-20">
+                    <AlertCircle className="w-16 h-16 text-slate-300 mx-auto" />
+                    <h1 className="text-3xl font-black tracking-tighter">Post Not Found</h1>
+                    <p className="text-slate-500 font-medium max-w-sm mx-auto">The story you&apos;re looking for doesn&apos;t exist or may have been removed.</p>
+                    <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-black uppercase text-xs tracking-widest rounded-xl hover:bg-blue-500 transition-colors">
+                        <ChevronLeft className="w-4 h-4" />
+                        Back to Home
+                    </Link>
+                </div>
+            </main>
+        );
+    }
+
     return (
         <main className="min-h-screen bg-white dark:bg-slate-950">
             <Navbar />
@@ -100,14 +152,16 @@ export default function PostContent({ post }: { post: any }) {
                     </motion.div>
 
                     {/* Tags */}
-                    <div className="mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-2">
-                        {post.tags?.map((tag: any) => (
-                            <span key={tag.id} className="inline-flex items-center gap-1 px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">
-                                <Tag className="w-3 h-3" />
-                                {tag.name}
-                            </span>
-                        ))}
-                    </div>
+                    {post.tags && post.tags.length > 0 && (
+                        <div className="mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-2">
+                            {post.tags.map((tag: any) => (
+                                <span key={tag.id} className="inline-flex items-center gap-1 px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">
+                                    <Tag className="w-3 h-3" />
+                                    {tag.name}
+                                </span>
+                            ))}
+                        </div>
+                    )}
 
                 </div>
             </article>

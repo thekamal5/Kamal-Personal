@@ -37,7 +37,7 @@ export function Hero() {
                                 Featured Report
                             </span>
                             <div className="h-0.5 w-12 bg-slate-200 dark:bg-slate-800" />
-                            <span className="text-xs font-bold uppercase tracking-wide opacity-50 dark:opacity-40">March 2026 Edition</span>
+                            <span className="text-xs font-bold uppercase tracking-wide opacity-50 dark:opacity-40">{new Date().toLocaleString('default', { month: 'long', year: 'numeric' })} Edition</span>
                         </motion.div>
 
                         <motion.h1
