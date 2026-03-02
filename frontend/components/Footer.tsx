@@ -46,9 +46,18 @@ export function Footer() {
                     {/* Brand Section */}
                     <div className="md:col-span-12 lg:col-span-5">
                         <Link href="/" className="inline-block group mb-8">
-                            <span className="text-4xl font-black tracking-tighter text-white">
-                                KS<span className="text-blue-400">.</span>
-                            </span>
+                            <div className="flex items-center gap-4">
+                                <div className="w-16 h-16 rounded-[20px] overflow-hidden border border-white/10 group-hover:border-blue-500/50 transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-blue-500/20">
+                                    <img
+                                        src="/logo.jpg"
+                                        alt="KS Logo"
+                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                                    />
+                                </div>
+                                <span className="text-4xl font-black tracking-tighter text-white">
+                                    Kamal<span className="text-blue-400">.</span>
+                                </span>
+                            </div>
                         </Link>
                         <p className="text-xl font-medium text-white/50 leading-relaxed max-w-md mb-12" style={{ fontFamily: "var(--font-inter, 'Inter', sans-serif)" }}>
                             Exploring the intersection of cinematic storytelling,

@@ -38,10 +38,14 @@ export function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 group">
-                        <span className="text-2xl font-black tracking-tighter text-blue-600 dark:text-blue-400 group-hover:scale-105 transition-transform duration-300">
-                            KS<span className="text-black dark:text-white">.</span>
-                        </span>
+                    <Link href="/" className="flex items-center gap-4 group">
+                        <div className="relative w-12 h-12 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:border-blue-500">
+                            <img
+                                src="/logo.jpg"
+                                alt="Kamal Shrestha Logo"
+                                className="w-full h-full object-cover brightness-110 dark:brightness-100"
+                            />
+                        </div>
                         <div className="flex flex-col leading-none">
                             <span className="text-xs font-bold tracking-widest uppercase opacity-60">Kamal</span>
                             <span className="text-sm font-black uppercase">Shrestha</span>
