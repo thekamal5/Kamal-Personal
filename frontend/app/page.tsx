@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { SectionGrid } from "@/components/SectionGrid";
+import { SocialFeed } from "@/components/SocialFeed";
 import { useQuery } from "@tanstack/react-query";
 import { getSections } from "@/lib/api";
 import { Play } from "lucide-react";
@@ -34,6 +35,9 @@ export default function Home() {
           />
         ))
       )}
+
+      {/* Premium Social Feed Section */}
+      <SocialFeed />
 
       {/* Static Premium Video Section */}
       <section className="bg-black py-32 relative overflow-hidden">
