@@ -9,7 +9,7 @@ import { getSections } from "@/lib/api";
 import { Play } from "lucide-react";
 
 export default function Home() {
-  const { data: homeSections, isLoading } = useQuery({
+  const { data: homeSections, isLoading, isError } = useQuery({
     queryKey: ['sections', 'Home'],
     queryFn: () => getSections('Home'),
   });
@@ -24,6 +24,10 @@ export default function Home() {
         <div className="py-24 max-w-7xl mx-auto px-4 space-y-24">
           <div className="h-96 bg-slate-50 dark:bg-slate-900 rounded-3xl animate-pulse" />
           <div className="h-96 bg-slate-50 dark:bg-slate-900 rounded-3xl animate-pulse" />
+        </div>
+      ) : isError ? (
+        <div className="py-24 text-center">
+          <p className="text-slate-400 font-medium">Currently updating editorial sections. Please check back shortly.</p>
         </div>
       ) : (
         homeSections?.map((section: any) => (
