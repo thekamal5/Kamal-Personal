@@ -38,11 +38,12 @@ export default function AboutPage() {
                             <div>
                                 <span className="text-blue-600 font-black tracking-widest uppercase text-xs mb-6 block">Personal Narrative</span>
                                 <h1 className="text-6xl md:text-8xl font-black text-editorial tracking-tighter mb-8 leading-[0.9]">Kamal <br />Shrestha.</h1>
-                                <p className="text-xl text-slate-500 font-medium font-inter leading-relaxed">
-                                    Kamal Shrestha is a media entrepreneur and deep-narrative journalist focused on the intersection of human identity
-                                    and digital advancement. With over a decade of experience in cinematic storytelling and investigative reporting,
-                                    his work seeks to bridge the gap between complex data and visceral human experience.
-                                </p>
+                                <div className="space-y-6 text-xl text-slate-500 font-medium font-inter leading-relaxed">
+                                    <p>I see myself as a lifelong learner.</p>
+                                    <p>My work in social research and development has allowed me to engage with diverse communities, policies, and lived realities. But beyond data and reports, I am interested in the human dimension — the emotions, tensions, and quiet resilience that shape our world.</p>
+                                    <p>I believe observation is a discipline. Listening is a responsibility. Reflection is growth.</p>
+                                    <p>Through this website, I document what I see, what I question, and what I continue to learn.</p>
+                                </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
