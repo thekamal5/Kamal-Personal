@@ -60,8 +60,8 @@ export function Footer() {
                             </div>
                         </Link>
                         <p className="text-xl font-medium text-white/50 leading-relaxed max-w-md mb-12" style={{ fontFamily: "var(--font-inter, 'Inter', sans-serif)" }}>
-                            Exploring the intersection of cinematic storytelling,
-                            human experiences, and digital transformation.
+                            Stories from the road, the field, and
+                            everyday life — written from experience.
                         </p>
 
                         {/* Social Links */}
