@@ -251,7 +251,7 @@ export function Hero() {
                             className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-black tracking-widest uppercase rounded-full border border-white/20 text-white"
                             style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)" }}
                         >
-                            ✦ Personal Journal
+                            ✦ World From My Eyes
                         </span>
                         <div className="h-px w-8 bg-white/20" />
                         <span className="text-[10px] font-bold uppercase tracking-wide text-white/40">
