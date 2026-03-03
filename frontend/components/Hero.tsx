@@ -202,11 +202,10 @@ export function Hero() {
                     initial={{ opacity: 0, scale: 0.8, x: 20 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     transition={{ duration: 0.7, delay: 1.8, type: "spring", stiffness: 150 }}
-                    className="absolute top-[18%] right-[4%] flex flex-col px-4 py-3 rounded-2xl"
+                    className="absolute top-[18%] right-[4%] flex flex-col px-6 py-4 rounded-2xl"
                     style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(16px)", border: "1px solid rgba(255,255,255,0.18)", boxShadow: "0 8px 32px rgba(0,0,0,0.3)" }}
                 >
-                    <span className="text-2xl font-black text-white">40+</span>
-                    <span className="text-[9px] font-black uppercase tracking-widest text-white/50">Place Visited with "Observing"</span>
+                    <span className="text-xl font-black text-white italic tracking-tighter">Observing.</span>
                 </motion.div>
 
                 {/* Spinning compass */}
@@ -321,22 +320,17 @@ export function Hero() {
                         transition={{ duration: 0.7, delay: 0.75 }}
                         className="flex flex-wrap gap-3 mb-10"
                     >
-                        {[
-                            { num: "120+", label: 'stories written with "Listening"' },
-                            { num: "40+", label: 'Place Visited with "Observing"' },
-                            { num: "10 yrs", label: 'on the road with "Understanding"' },
-                        ].map(({ num, label }, i) => (
+                        {["Listening", "Observing", "Understanding"].map((word, i) => (
                             <motion.div
-                                key={label}
+                                key={word}
                                 initial={{ opacity: 0, y: 12, scale: 0.92 }}
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
                                 transition={{ duration: 0.6, delay: 0.8 + i * 0.12, ease: CUBIC }}
                                 whileHover={{ scale: 1.06, y: -2 }}
-                                className="flex flex-col px-5 py-3 rounded-2xl cursor-default"
+                                className="flex flex-col px-6 py-4 rounded-2xl cursor-default"
                                 style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.13)" }}
                             >
-                                <span className="text-xl font-black text-white">{num}</span>
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">{label}</span>
+                                <span className="text-lg font-black text-white italic tracking-tight">{word}.</span>
                             </motion.div>
                         ))}
                     </motion.div>
