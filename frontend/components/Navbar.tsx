@@ -3,14 +3,18 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Search, Menu, X, PlayCircle, Newspaper, User, Settings } from "lucide-react";
+import { Home, BookOpen, Map, Briefcase, Image, Eye, User, Mail, Search, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-    { name: "Archive", href: "/archive", icon: <Newspaper className="w-4 h-4" /> },
-    { name: "Videos", href: "/videos", icon: <PlayCircle className="w-4 h-4" /> },
-    { name: "Opinions", href: "/opinions", icon: <User className="w-4 h-4" /> },
-    { name: "About", href: "/about", icon: <Settings className="w-4 h-4" /> },
+    { name: "Home", href: "/", icon: <Home className="w-4 h-4" /> },
+    { name: "Stories", href: "/stories", icon: <BookOpen className="w-4 h-4" /> },
+    { name: "Journeys", href: "/journeys", icon: <Map className="w-4 h-4" /> },
+    { name: "Work & Experience", href: "/work", icon: <Briefcase className="w-4 h-4" /> },
+    { name: "Visual Stories", href: "/visual", icon: <Image className="w-4 h-4" /> },
+    { name: "Vision", href: "/vision", icon: <Eye className="w-4 h-4" /> },
+    { name: "About", href: "/about", icon: <User className="w-4 h-4" /> },
+    { name: "Contact", href: "/contact", icon: <Mail className="w-4 h-4" /> },
 ];
 
 export function Navbar() {

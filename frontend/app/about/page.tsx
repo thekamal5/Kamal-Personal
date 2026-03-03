@@ -1,6 +1,7 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { User, Award, Globe, Mic, Zap } from "lucide-react";
 
@@ -65,6 +66,8 @@ export default function AboutPage() {
                     <div className="w-24 h-1 bg-blue-600 mx-auto" />
                 </div>
             </section>
+
+            <Footer />
         </main>
     );
 }

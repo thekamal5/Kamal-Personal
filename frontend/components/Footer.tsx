@@ -86,20 +86,20 @@ export function Footer() {
                     <div className="md:col-span-4 lg:col-span-2">
                         <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-8">Narratives</h4>
                         <ul className="space-y-5">
-                            <FooterLink href="/archive">Archive</FooterLink>
+                            <FooterLink href="/stories">Stories</FooterLink>
+                            <FooterLink href="/journeys">Journeys</FooterLink>
+                            <FooterLink href="/visual">Visual Stories</FooterLink>
                             <FooterLink href="/videos">Videos</FooterLink>
-                            <FooterLink href="/opinions">Opinions</FooterLink>
-                            <FooterLink href="/about">About Me</FooterLink>
                         </ul>
                     </div>
 
                     <div className="md:col-span-4 lg:col-span-2">
-                        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-8">System</h4>
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-8">Profile</h4>
                         <ul className="space-y-5">
-                            <FooterLink href="/admin/login">Editorial Gate</FooterLink>
-                            <FooterLink href="#">Work with Me</FooterLink>
-                            <FooterLink href="#">Privacy Policy</FooterLink>
-                            <FooterLink href="#">Newsletter</FooterLink>
+                            <FooterLink href="/work">Work & Experience</FooterLink>
+                            <FooterLink href="/vision">Vision</FooterLink>
+                            <FooterLink href="/about">About Me</FooterLink>
+                            <FooterLink href="/contact">Contact</FooterLink>
                         </ul>
                     </div>
 
