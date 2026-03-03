@@ -151,7 +151,7 @@ export default function Home() {
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-100 dark:border-slate-800">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <span className="text-rose-500 font-black tracking-widest uppercase text-xs mb-4 block">Gallery</span>
+            <span className="text-blue-600 font-black tracking-widest uppercase text-xs mb-4 block">Gallery</span>
             <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900 dark:text-white mb-6">
               Visual Stories
             </h2>
@@ -161,7 +161,7 @@ export default function Home() {
           </div>
           <Link
             href="/visual"
-            className="group flex items-center gap-3 border-2 border-slate-200 dark:border-slate-800 px-8 py-4 rounded-2xl font-bold transition-all hover:border-rose-500"
+            className="group flex items-center gap-3 border-2 border-slate-200 dark:border-slate-800 px-8 py-4 rounded-2xl font-bold transition-all hover:border-blue-600"
           >
             View Gallery
             <ImageIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -182,7 +182,7 @@ export default function Home() {
                   alt="Gallery"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
           ))}

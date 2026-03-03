@@ -49,14 +49,13 @@ const wordVariants = {
     }),
 };
 
-const PARTICLES = [
-    { x: 62, y: 10, size: 5, delay: 0, duration: 5.2 },
-    { x: 76, y: 30, size: 4, delay: 1.2, duration: 6.8 },
-    { x: 88, y: 55, size: 8, delay: 0.5, duration: 4.5 },
-    { x: 70, y: 74, size: 5, delay: 2.1, duration: 7.2 },
-    { x: 90, y: 85, size: 3, delay: 0.8, duration: 5.9 },
-    { x: 80, y: 20, size: 6, delay: 1.7, duration: 6.1 },
-];
+const PARTICLES = Array.from({ length: 40 }).map((_, i) => ({
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: Math.random() * 4 + 1,
+    delay: Math.random() * 5,
+    duration: Math.random() * 5 + 4,
+}));
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HERO
@@ -80,7 +79,7 @@ export function Hero() {
             {/* ── BACKGROUND GRADIENT ── */}
             <div
                 className="absolute inset-0 z-0"
-                style={{ background: "linear-gradient(125deg, #0b0f35 0%, #141d6b 28%, #2030b0 54%, #3b52e0 74%, #5c70e8 90%, #8b9cf7 100%)" }}
+                style={{ background: "linear-gradient(135deg, #0b0f35 0%, #1a237e 25%, #283593 50%, #3949ab 75%, #5c6bc0 100%)" }}
             />
 
             {/* ── RADIAL GLOWS ── */}

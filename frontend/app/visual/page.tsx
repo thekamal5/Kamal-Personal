@@ -27,7 +27,7 @@ export default function VisualStoriesPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="max-w-3xl mb-24"
                 >
-                    <span className="text-rose-500 font-black tracking-widest uppercase text-xs mb-6 block">Moments Translated</span>
+                    <span className="text-blue-600 font-black tracking-widest uppercase text-xs mb-6 block">Moments Translated</span>
                     <h1 className="text-6xl md:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-8">
                         Visual Stories
                     </h1>
@@ -51,7 +51,7 @@ export default function VisualStoriesPage() {
                                     alt="Visual Narrative"
                                     className="w-full grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                                <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                                 <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 flex items-center gap-3">
                                     <div className="p-3 bg-white text-black rounded-full shadow-lg">
                                         <Camera className="w-5 h-5" />
