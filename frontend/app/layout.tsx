@@ -13,8 +13,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Kamal Shrestha | Media & Personal Brand",
-  description: "Kamal Shrestha explores the intersection of journalism, technology, and cinematic branding in an ever-evolving digital landscape.",
+  title: "Kamal Shrestha | World from my eyes",
+  description: "Stories from the road, the field, and everyday life — written from experience.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://kamal-shrestha.com.np'),
   openGraph: {
     siteName: "Kamal Shrestha",

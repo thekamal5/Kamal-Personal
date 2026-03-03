@@ -3,7 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { User, Award, Globe, Mic, Zap } from "lucide-react";
+import { User, Award, Globe, Mic, Zap, Eye, Ear, Compass } from "lucide-react";
 
 export default function AboutPage() {
     return (
@@ -47,11 +47,26 @@ export default function AboutPage() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <StatItem icon={<Globe className="w-5 h-5" />} label="Global Reports" value="120+" />
-                                <StatItem icon={<Award className="w-5 h-5" />} label="Media Awards" value="15" />
-                                <StatItem icon={<Mic className="w-5 h-5" />} label="Talks & Keynotes" value="40+" />
-                                <StatItem icon={<Zap className="w-5 h-5" />} label="Productions" value="200+" />
+                            <div className="flex flex-wrap gap-4 pt-4">
+                                {[
+                                    { word: "Listening", icon: <Ear className="w-5 h-5" /> },
+                                    { word: "Observing", icon: <Eye className="w-5 h-5" /> },
+                                    { word: "Understanding", icon: <Compass className="w-5 h-5" /> }
+                                ].map(({ word, icon }, i) => (
+                                    <motion.div
+                                        key={word}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.5 + i * 0.1 }}
+                                        whileHover={{ scale: 1.05, y: -2 }}
+                                        className="flex items-center gap-4 px-8 py-5 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800"
+                                    >
+                                        <div className="text-blue-600">
+                                            {icon}
+                                        </div>
+                                        <span className="text-2xl font-black text-slate-800 dark:text-white italic tracking-tight">{word}.</span>
+                                    </motion.div>
+                                ))}
                             </div>
                         </div>
                     </div>
