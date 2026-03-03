@@ -38,7 +38,7 @@ export default function JourneysPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="max-w-3xl mb-24"
                 >
-                    <span className="text-emerald-500 font-black tracking-widest uppercase text-xs mb-6 block">Exploration & Discovery</span>
+                    <span className="text-blue-500 font-black tracking-widest uppercase text-xs mb-6 block">Exploration & Discovery</span>
                     <h1 className="text-6xl md:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-8">
                         Journeys
                     </h1>
@@ -63,11 +63,11 @@ export default function JourneysPage() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                             <div className="absolute bottom-12 left-12 right-12">
-                                <span className="text-sm font-black uppercase tracking-widest text-emerald-400 mb-4 block flex items-center gap-2">
+                                <span className="text-sm font-black uppercase tracking-widest text-blue-400 mb-4 block flex items-center gap-2">
                                     <Compass className="w-4 h-4" />
                                     {j.location}
                                 </span>
-                                <h3 className="text-4xl md:text-5xl font-black text-white italic tracking-tighter mb-6 group-hover:text-emerald-400 transition-colors">
+                                <h3 className="text-4xl md:text-5xl font-black text-white italic tracking-tighter mb-6 group-hover:text-blue-400 transition-colors">
                                     {j.title}
                                 </h3>
                                 <p className="text-slate-300 font-medium text-lg leading-relaxed mb-8">

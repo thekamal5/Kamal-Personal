@@ -103,13 +103,13 @@ export default function Home() {
 
       {/* Journeys & Field Notes Section */}
       <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-emerald-500/10 blur-[100px]" />
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 blur-[100px]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
             <div className="max-w-2xl">
-              <span className="text-emerald-500 font-black tracking-widest uppercase text-xs mb-4 block">Explorations</span>
+              <span className="text-blue-500 font-black tracking-widest uppercase text-xs mb-4 block">Explorations</span>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 leading-none">
-                Journeys & <br /><span className="text-emerald-500 italic">Field Notes</span>
+                Journeys & <br /><span className="text-blue-500 italic">Field Notes</span>
               </h2>
               <p className="text-xl text-slate-400 font-medium italic">
                 "Travel is not movement alone — it is perspective. Each journey reshapes how I understand people, culture, and change."
@@ -117,7 +117,7 @@ export default function Home() {
             </div>
             <Link
               href="/journeys"
-              className="group flex items-center gap-3 bg-emerald-500 text-slate-900 px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105"
+              className="group flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold transition-all hover:scale-105"
             >
               Explore Journeys
               <Map className="w-5 h-5 group-hover:rotate-12 transition-transform" />
