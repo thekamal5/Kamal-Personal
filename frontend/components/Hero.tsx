@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, Play, MapPin, Compass, Camera } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState, memo } from "react";
 import { FootstepCanvas } from "./FootstepCanvas";
 
@@ -205,7 +206,7 @@ export function Hero() {
                     style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(16px)", border: "1px solid rgba(255,255,255,0.18)", boxShadow: "0 8px 32px rgba(0,0,0,0.3)" }}
                 >
                     <span className="text-2xl font-black text-white">40+</span>
-                    <span className="text-[9px] font-black uppercase tracking-widest text-white/50">Places Visited</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-white/50">Place Visited with "Observing"</span>
                 </motion.div>
 
                 {/* Spinning compass */}
@@ -321,9 +322,9 @@ export function Hero() {
                         className="flex flex-wrap gap-3 mb-10"
                     >
                         {[
-                            { num: "120+", label: "Stories Written" },
-                            { num: "40+", label: "Places Visited" },
-                            { num: "10yrs", label: "On the Road" },
+                            { num: "120+", label: 'stories written with "Listening"' },
+                            { num: "40+", label: 'Place Visited with "Observing"' },
+                            { num: "10 yrs", label: 'on the road with "Understanding"' },
                         ].map(({ num, label }, i) => (
                             <motion.div
                                 key={label}
@@ -347,27 +348,31 @@ export function Hero() {
                         transition={{ duration: 0.7, delay: 1.1 }}
                         className="flex flex-col sm:flex-row gap-4"
                     >
-                        <motion.button
-                            whileHover={{ scale: 1.03, y: -2 }}
-                            whileTap={{ scale: 0.97 }}
-                            className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-slate-900 font-black uppercase text-xs tracking-widest rounded-2xl shadow-xl shadow-black/25 hover:bg-blue-50 transition-colors duration-300"
-                        >
-                            Read My Story
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                        </motion.button>
+                        <Link href="/stories">
+                            <motion.button
+                                whileHover={{ scale: 1.03, y: -2 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="group w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-white text-slate-900 font-black uppercase text-xs tracking-widest rounded-2xl shadow-xl shadow-black/25 hover:bg-blue-50 transition-colors duration-300"
+                            >
+                                Read My Stories
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                            </motion.button>
+                        </Link>
 
-                        <motion.button
-                            whileHover={{ scale: 1.03, y: -2 }}
-                            whileTap={{ scale: 0.97 }}
-                            className="group flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border font-bold text-xs uppercase tracking-widest text-white transition-all duration-300"
-                            style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", borderColor: "rgba(255,255,255,0.20)" }}
-                        >
-                            <span className="w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-                                style={{ background: "rgba(255,255,255,0.16)" }}>
-                                <Play className="w-3 h-3 fill-white" />
-                            </span>
-                            Watch Highlights
-                        </motion.button>
+                        <Link href="/visual">
+                            <motion.button
+                                whileHover={{ scale: 1.03, y: -2 }}
+                                whileTap={{ scale: 0.97 }}
+                                className="group w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-2xl border font-bold text-xs uppercase tracking-widest text-white transition-all duration-300"
+                                style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", borderColor: "rgba(255,255,255,0.20)" }}
+                            >
+                                <span className="w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                                    style={{ background: "rgba(255,255,255,0.16)" }}>
+                                    <Play className="w-3 h-3 fill-white" />
+                                </span>
+                                Watch Highlights
+                            </motion.button>
+                        </Link>
                     </motion.div>
 
                     {/* Signature */}
